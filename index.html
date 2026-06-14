@@ -131,7 +131,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۴</div>
-      <div class="hdr-upd">آپدیت ۱۴:۰۴</div>
+      <div class="hdr-upd">آپدیت ۱۴:۲۲</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -183,8 +183,7 @@ function cv(c) { return c > 0 ? 'c-up' : c < 0 ? 'c-dn' : 'c-muted'; }
 function cell(lbl, num, unit, cls) {
   if (num && num !== '—' && unit) {
     return '<div class="cell"><div class="cl">' + lbl + '</div>'
-      + '<div class="cv-wrap"><span class="cu">' + unit + '</span>'
-      + '<span class="cv ' + cls + '">' + num + '</span></div></div>';
+      + '<div class="cv ' + cls + '">' + num + '<span class="cu"> ' + unit + '</span></div></div>';
   }
   return '<div class="cell"><div class="cl">' + lbl + '</div>'
     + '<div class="cv ' + cls + '">' + (num || '—') + '</div></div>';
@@ -228,13 +227,13 @@ function buildII(s) {
     + '</div>'
     + '<div class="ii-row">'
     + '<div class="ii-row-lbl ii-buy-lbl">خرید</div>'
-    + '<div class="ii-cell ii-buy"><div class="ii-vw"><span class="ii-u">' + uVol(rB) + '</span><span class="ii-vol c-up">' + nVol(rB) + '</span></div><div class="ii-pct">' + rBp + '%</div>' + (rBc ? '<div class="ii-cnt">' + rBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
-    + '<div class="ii-cell"><div class="ii-vw"><span class="ii-u">' + uVol(iB) + '</span><span class="ii-vol c-up">' + nVol(iB) + '</span></div><div class="ii-pct">' + iBp + '%</div>' + (iBc ? '<div class="ii-cnt">' + iBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-buy"><div class="ii-vol c-up">' + nVol(rB) + '<span class="ii-u"> ' + uVol(rB) + '</span></div><div class="ii-pct">' + rBp + '%</div>' + (rBc ? '<div class="ii-cnt">' + rBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell"><div class="ii-vol c-up">' + nVol(iB) + '<span class="ii-u"> ' + uVol(iB) + '</span></div><div class="ii-pct">' + iBp + '%</div>' + (iBc ? '<div class="ii-cnt">' + iBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
     + '</div>'
     + '<div class="ii-row">'
     + '<div class="ii-row-lbl ii-sell-lbl">فروش</div>'
-    + '<div class="ii-cell ii-sell"><div class="ii-vw"><span class="ii-u">' + uVol(rS) + '</span><span class="ii-vol c-dn">' + nVol(rS) + '</span></div><div class="ii-pct">' + rSp + '%</div>' + (rSc ? '<div class="ii-cnt">' + rSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
-    + '<div class="ii-cell ii-sell"><div class="ii-vw"><span class="ii-u">' + uVol(iS) + '</span><span class="ii-vol c-dn">' + nVol(iS) + '</span></div><div class="ii-pct">' + iSp + '%</div>' + (iSc ? '<div class="ii-cnt">' + iSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-sell"><div class="ii-vol c-dn">' + nVol(rS) + '<span class="ii-u"> ' + uVol(rS) + '</span></div><div class="ii-pct">' + rSp + '%</div>' + (rSc ? '<div class="ii-cnt">' + rSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-sell"><div class="ii-vol c-dn">' + nVol(iS) + '<span class="ii-u"> ' + uVol(iS) + '</span></div><div class="ii-pct">' + iSp + '%</div>' + (iSc ? '<div class="ii-cnt">' + iSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
     + '</div>'
     + '</div>';
 }
@@ -278,7 +277,7 @@ function buildDetail(s) {
     + '<div class="cell" style="margin-bottom:5px">'
     + '<div class="cl">جریان پول</div>'
     + (fNum !== '—'
-      ? '<div class="cv-wrap"><span class="cu">میلیارد تومان</span><span class="cv ' + fCls + '">' + fNum + '</span></div>'
+      ? '<div class="cv ' + fCls + '">' + fNum + '<span class="cu"> میلیارد تومان</span></div>'
       : '<div class="cv c-muted">—</div>')
     + '</div>';
 
