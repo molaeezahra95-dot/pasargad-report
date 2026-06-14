@@ -62,9 +62,9 @@ body{
 .zt{background:#f9fafb;color:var(--muted);border:1px solid var(--border);}
 .sr-right{flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
 .sr-price{font-size:14px;font-weight:800;direction:ltr;color:var(--txt);}
-.sr-metrics{display:flex;gap:4px;flex-wrap:nowrap;justify-content:flex-end;}
-.sr-m{font-size:9px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:2px 6px;color:var(--txt);white-space:nowrap;direction:ltr;}
-.sr-m .lbl{font-size:8px;color:var(--muted);margin-right:2px;}
+.sr-metrics{display:flex;gap:4px;flex-wrap:nowrap;justify-content:flex-end;overflow:hidden;}
+.sr-m{font-size:7.5px;background:#f9fafb;border:1px solid var(--border);border-radius:5px;padding:1px 5px;color:var(--txt);white-space:nowrap;}
+.sr-m .lbl{font-size:7px;color:var(--muted);margin-left:2px;}
 .hint{font-size:10px;color:var(--muted);text-align:center;margin-top:8px;padding:4px;}
 /* detail */
 .stk-hero{
@@ -87,7 +87,7 @@ body{
 .cell{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:6px 9px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
 .cl{font-size:8px;color:var(--muted);margin-bottom:2px;font-weight:600;}
 .cv{font-size:13px;font-weight:800;}
-.cv-wrap{display:flex;direction:rtl;align-items:baseline;gap:3px;}
+.cv-wrap{display:flex;direction:rtl;align-items:baseline;gap:3px;justify-content:center;}
 .cu{font-size:9px;color:var(--muted);}
 .c-up{color:var(--up);} .c-dn{color:var(--dn);}
 .c-teal{color:var(--teal);} .c-gold{color:var(--gold);}
@@ -108,8 +108,10 @@ body{
 .ii-sell-lbl{background:var(--dn);}
 .ii-cell{padding:5px 6px;text-align:center;border-right:1px solid var(--border);}
 .ii-cell:last-child{border-right:none;}
-.ii-vol{font-size:12px;font-weight:800;direction:ltr;}
-.ii-pct{font-size:9px;font-weight:700;color:var(--muted);margin-top:1px;direction:ltr;}
+.ii-vw{display:flex;direction:rtl;justify-content:center;align-items:baseline;gap:2px;}
+.ii-vol{font-size:12px;font-weight:800;}
+.ii-u{font-size:8px;color:var(--muted);}
+.ii-pct{font-size:9px;font-weight:700;color:var(--muted);margin-top:1px;}
 .ii-cnt{font-size:8px;color:var(--muted);}
 .ii-buy{background:rgba(22,163,74,.05);}
 .ii-sell{background:rgba(220,38,38,.05);}
@@ -129,7 +131,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۴</div>
-      <div class="hdr-upd">آپدیت ۱۳:۴۳</div>
+      <div class="hdr-upd">آپدیت ۱۴:۰۴</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -181,27 +183,11 @@ function cv(c) { return c > 0 ? 'c-up' : c < 0 ? 'c-dn' : 'c-muted'; }
 function cell(lbl, num, unit, cls) {
   if (num && num !== '—' && unit) {
     return '<div class="cell"><div class="cl">' + lbl + '</div>'
-      + '<div class="cv-wrap"><span class="cv ' + cls + '">' + num + '</span>'
-      + '<span class="cu">' + unit + '</span></div></div>';
+      + '<div class="cv-wrap"><span class="cu">' + unit + '</span>'
+      + '<span class="cv ' + cls + '">' + num + '</span></div></div>';
   }
   return '<div class="cell"><div class="cl">' + lbl + '</div>'
     + '<div class="cv ' + cls + '">' + (num || '—') + '</div></div>';
-}
-
-/* short units for summary chips */
-function sVol(n) {
-  if (!n) return '—';
-  var m = n / 1e6;
-  return m >= 1
-    ? (m >= 10 ? Math.round(m) : parseFloat(m.toFixed(1))).toLocaleString('fa-IR') + 'م.س'
-    : n.toLocaleString('fa-IR') + 'س';
-}
-function sVal(n) {
-  if (!n) return '—';
-  var b = n / 1e10;
-  return b >= 1
-    ? (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR') + 'م.ت'
-    : parseFloat((b * 1000).toFixed(0)).toLocaleString('fa-IR') + 'م.ت';
 }
 
 function buildSummary() {
@@ -215,8 +201,8 @@ function buildSummary() {
       + '<div class="sr-right">'
       + '<div class="sr-price">' + (s.lastPrice || 0).toLocaleString('fa-IR') + ' تومان</div>'
       + '<div class="sr-metrics">'
-      + '<div class="sr-m"><span class="lbl">ح</span>' + sVol(s.volume) + '</div>'
-      + '<div class="sr-m"><span class="lbl">ا</span>' + sVal(s.value) + '</div>'
+      + '<div class="sr-m">حجم ' + nVol(s.volume) + ' ' + uVol(s.volume) + '</div>'
+      + '<div class="sr-m">ارزش ' + nVal(s.value) + ' ' + uVal(s.value) + '</div>'
       + '</div></div></div>';
   });
   html += '</div><div class="hint">روی نماد بزن برای جزئیات ◄</div>';
@@ -242,13 +228,13 @@ function buildII(s) {
     + '</div>'
     + '<div class="ii-row">'
     + '<div class="ii-row-lbl ii-buy-lbl">خرید</div>'
-    + '<div class="ii-cell ii-buy"><div class="ii-vol c-up">' + nVol(rB) + ' ' + uVol(rB) + '</div><div class="ii-pct">' + rBp + '%</div>' + (rBc ? '<div class="ii-cnt">' + rBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
-    + '<div class="ii-cell"><div class="ii-vol c-up">' + nVol(iB) + ' ' + uVol(iB) + '</div><div class="ii-pct">' + iBp + '%</div>' + (iBc ? '<div class="ii-cnt">' + iBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-buy"><div class="ii-vw"><span class="ii-u">' + uVol(rB) + '</span><span class="ii-vol c-up">' + nVol(rB) + '</span></div><div class="ii-pct">' + rBp + '%</div>' + (rBc ? '<div class="ii-cnt">' + rBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell"><div class="ii-vw"><span class="ii-u">' + uVol(iB) + '</span><span class="ii-vol c-up">' + nVol(iB) + '</span></div><div class="ii-pct">' + iBp + '%</div>' + (iBc ? '<div class="ii-cnt">' + iBc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
     + '</div>'
     + '<div class="ii-row">'
     + '<div class="ii-row-lbl ii-sell-lbl">فروش</div>'
-    + '<div class="ii-cell ii-sell"><div class="ii-vol c-dn">' + nVol(rS) + ' ' + uVol(rS) + '</div><div class="ii-pct">' + rSp + '%</div>' + (rSc ? '<div class="ii-cnt">' + rSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
-    + '<div class="ii-cell ii-sell"><div class="ii-vol c-dn">' + nVol(iS) + ' ' + uVol(iS) + '</div><div class="ii-pct">' + iSp + '%</div>' + (iSc ? '<div class="ii-cnt">' + iSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-sell"><div class="ii-vw"><span class="ii-u">' + uVol(rS) + '</span><span class="ii-vol c-dn">' + nVol(rS) + '</span></div><div class="ii-pct">' + rSp + '%</div>' + (rSc ? '<div class="ii-cnt">' + rSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
+    + '<div class="ii-cell ii-sell"><div class="ii-vw"><span class="ii-u">' + uVol(iS) + '</span><span class="ii-vol c-dn">' + nVol(iS) + '</span></div><div class="ii-pct">' + iSp + '%</div>' + (iSc ? '<div class="ii-cnt">' + iSc.toLocaleString('fa-IR') + ' نفر</div>' : '') + '</div>'
     + '</div>'
     + '</div>';
 }
@@ -292,7 +278,7 @@ function buildDetail(s) {
     + '<div class="cell" style="margin-bottom:5px">'
     + '<div class="cl">جریان پول</div>'
     + (fNum !== '—'
-      ? '<div class="cv-wrap"><span class="cv ' + fCls + '">' + fNum + '</span><span class="cu">میلیارد تومان</span></div>'
+      ? '<div class="cv-wrap"><span class="cu">میلیارد تومان</span><span class="cv ' + fCls + '">' + fNum + '</span></div>'
       : '<div class="cv c-muted">—</div>')
     + '</div>';
 
