@@ -48,66 +48,69 @@ body{
 .slider{display:flex;height:100%;transition:transform .35s cubic-bezier(.4,0,.2,1);will-change:transform;}
 .slide{min-width:100%;height:100%;overflow-y:auto;padding:12px 12px 24px;-webkit-overflow-scrolling:touch;}
 /* summary */
-.sum-grid{display:flex;flex-direction:column;gap:8px;}
+.sum-grid{display:flex;flex-direction:column;gap:7px;}
 .sum-row{
   background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:12px 14px;display:flex;align-items:center;gap:10px;
+  padding:10px 12px;display:flex;align-items:center;gap:8px;
   cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .15s;
 }
 .sum-row:active{box-shadow:0 3px 10px rgba(0,0,0,.1);}
-.sr-name{font-size:17px;font-weight:800;color:var(--txt);min-width:52px;}
-.sr-chg{font-size:12px;font-weight:800;padding:3px 10px;border-radius:20px;direction:ltr;min-width:60px;text-align:center;}
+.sr-name{font-size:16px;font-weight:800;color:var(--txt);min-width:48px;}
+.sr-chg{font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px;direction:ltr;min-width:58px;text-align:center;}
 .up{background:#f0fdf4;color:var(--up);border:1px solid #bbf7d0;}
 .dn{background:#fef2f2;color:var(--dn);border:1px solid #fecaca;}
 .zt{background:#f9fafb;color:var(--muted);border:1px solid var(--border);}
-.sr-right{flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
-.sr-price{font-size:15px;font-weight:800;direction:ltr;color:var(--txt);}
-.sr-metrics{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;}
-.sr-m{font-size:10px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:2px 7px;color:var(--txt);}
-.sr-m .lbl{font-size:8px;color:var(--muted);margin-left:2px;}
-.hint{font-size:10px;color:var(--muted);text-align:center;margin-top:10px;padding:6px;}
+.sr-right{flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sr-price{font-size:14px;font-weight:800;direction:ltr;color:var(--txt);}
+.sr-metrics{display:flex;gap:4px;flex-wrap:nowrap;justify-content:flex-end;}
+.sr-m{font-size:9px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:2px 6px;color:var(--txt);white-space:nowrap;direction:ltr;}
+.sr-m .lbl{font-size:8px;color:var(--muted);margin-right:2px;}
+.hint{font-size:10px;color:var(--muted);text-align:center;margin-top:8px;padding:4px;}
 /* detail */
 .stk-hero{
-  background:#fff;border:1px solid var(--border);border-radius:14px;
-  border-top:3px solid var(--gold);padding:16px;text-align:center;
-  margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  border-top:3px solid var(--gold);padding:10px 12px 8px;text-align:center;
+  margin-bottom:5px;box-shadow:0 2px 6px rgba(0,0,0,.06);
 }
-.sh-name{font-size:22px;font-weight:800;color:var(--txt);margin-bottom:4px;}
-.sh-badge{display:inline-block;font-size:10px;padding:2px 10px;border-radius:16px;font-weight:700;margin-bottom:8px;}
+.sh-name{font-size:18px;font-weight:800;color:var(--txt);margin-bottom:2px;}
+.sh-badge{display:inline-block;font-size:9px;padding:1px 8px;border-radius:14px;font-weight:700;margin-bottom:4px;}
 .ok{background:#f0fdf4;color:var(--up);border:1px solid #bbf7d0;}
 .stop{background:#fef2f2;color:var(--dn);border:1px solid #fecaca;}
-.sh-prices{display:flex;justify-content:center;align-items:baseline;gap:10px;margin-bottom:4px;}
-.sh-last{font-size:26px;font-weight:800;direction:ltr;}
-.sh-chg{font-size:13px;font-weight:800;padding:3px 10px;border-radius:20px;direction:ltr;}
-.sh-close{font-size:11px;color:var(--muted);margin-top:2px;}
+.sh-prices{display:flex;justify-content:center;align-items:baseline;gap:8px;margin-bottom:2px;}
+.sh-last{font-size:22px;font-weight:800;direction:ltr;}
+.sh-chg{font-size:12px;font-weight:800;padding:2px 8px;border-radius:18px;direction:ltr;}
+.sh-close{font-size:10px;color:var(--muted);margin-top:1px;}
 .sh-close b{color:var(--teal);}
-.sec-lbl{font-size:10px;font-weight:700;color:var(--gold);border-right:3px solid var(--gold);padding-right:6px;margin:10px 0 6px;}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;}
-.cell{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-.cl{font-size:9px;color:var(--muted);margin-bottom:3px;font-weight:600;}
-.cv{font-size:14px;font-weight:800;direction:ltr;text-align:center;}
+.sec-lbl{font-size:8px;font-weight:700;color:var(--gold);border-right:2px solid var(--gold);padding-right:5px;margin:4px 0 3px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:5px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:5px;}
+.cell{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:6px 9px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.cl{font-size:8px;color:var(--muted);margin-bottom:2px;font-weight:600;}
+.cv{font-size:13px;font-weight:800;}
+.cv-wrap{display:flex;direction:rtl;align-items:baseline;gap:3px;}
+.cu{font-size:9px;color:var(--muted);}
 .c-up{color:var(--up);} .c-dn{color:var(--dn);}
 .c-teal{color:var(--teal);} .c-gold{color:var(--gold);}
 .c-txt{color:var(--txt);} .c-muted{color:var(--muted);}
 /* حقیقی/حقوقی table */
-.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:6px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-.ii-hdr{display:grid;grid-template-columns:44px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);}
-.ii-hdr-lbl{padding:6px;}
-.ii-hdr-col{padding:6px;text-align:center;font-size:11px;font-weight:700;color:var(--muted);border-right:1px solid var(--border);}
-.ii-row{display:grid;grid-template-columns:44px 1fr 1fr;border-bottom:1px solid var(--border);}
+.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:5px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.ii-hdr{display:grid;grid-template-columns:36px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);}
+.ii-hdr-lbl{padding:4px;}
+.ii-hdr-col{padding:4px 6px;text-align:center;font-size:10px;font-weight:700;color:var(--muted);border-right:1px solid var(--border);}
+.ii-row{display:grid;grid-template-columns:36px 1fr 1fr;border-bottom:1px solid var(--border);}
 .ii-row:last-child{border-bottom:none;}
 .ii-row-lbl{
   display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:800;color:#fff;
+  font-size:10px;font-weight:800;color:#fff;
   writing-mode:vertical-rl;text-orientation:mixed;
 }
 .ii-buy-lbl{background:var(--up);}
 .ii-sell-lbl{background:var(--dn);}
-.ii-cell{padding:8px 10px;text-align:center;border-right:1px solid var(--border);}
+.ii-cell{padding:5px 6px;text-align:center;border-right:1px solid var(--border);}
 .ii-cell:last-child{border-right:none;}
-.ii-vol{font-size:14px;font-weight:800;direction:ltr;}
-.ii-pct{font-size:10px;font-weight:700;color:var(--muted);margin-top:2px;direction:ltr;}
-.ii-cnt{font-size:9px;color:var(--muted);margin-top:1px;}
+.ii-vol{font-size:12px;font-weight:800;direction:ltr;}
+.ii-pct{font-size:9px;font-weight:700;color:var(--muted);margin-top:1px;direction:ltr;}
+.ii-cnt{font-size:8px;color:var(--muted);}
 .ii-buy{background:rgba(22,163,74,.05);}
 .ii-sell{background:rgba(220,38,38,.05);}
 </style>
@@ -125,8 +128,8 @@ body{
       <div class="hdr-title">گروه مالی پاسارگاد</div>
     </div>
     <div class="hdr-right">
-      <div class="hdr-date">۳۰۰۵/۰۳/۲۵</div>
-      <div class="hdr-upd">آپدیت ۱۳:۲۳</div>
+      <div class="hdr-date">۱۴۰۵/۰۳/۲۴</div>
+      <div class="hdr-upd">آپدیت ۱۳:۴۳</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -176,10 +179,29 @@ function cc(c) { return c > 0 ? 'up' : c < 0 ? 'dn' : 'zt'; }
 function cv(c) { return c > 0 ? 'c-up' : c < 0 ? 'c-dn' : 'c-muted'; }
 
 function cell(lbl, num, unit, cls) {
-  var val = (num && num !== '—' && unit) ? num + ' ' + unit : num;
+  if (num && num !== '—' && unit) {
+    return '<div class="cell"><div class="cl">' + lbl + '</div>'
+      + '<div class="cv-wrap"><span class="cv ' + cls + '">' + num + '</span>'
+      + '<span class="cu">' + unit + '</span></div></div>';
+  }
   return '<div class="cell"><div class="cl">' + lbl + '</div>'
-    + '<div class="cv ' + cls + '">' + val + '</div>'
-    + '</div>';
+    + '<div class="cv ' + cls + '">' + (num || '—') + '</div></div>';
+}
+
+/* short units for summary chips */
+function sVol(n) {
+  if (!n) return '—';
+  var m = n / 1e6;
+  return m >= 1
+    ? (m >= 10 ? Math.round(m) : parseFloat(m.toFixed(1))).toLocaleString('fa-IR') + 'م.س'
+    : n.toLocaleString('fa-IR') + 'س';
+}
+function sVal(n) {
+  if (!n) return '—';
+  var b = n / 1e10;
+  return b >= 1
+    ? (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR') + 'م.ت'
+    : parseFloat((b * 1000).toFixed(0)).toLocaleString('fa-IR') + 'م.ت';
 }
 
 function buildSummary() {
@@ -187,16 +209,14 @@ function buildSummary() {
   var html = '<div class="sum-grid">';
   stocks.forEach(function(s, si) {
     var sign = s.change > 0 ? '+' : '';
-    var vn = nVol(s.volume); var vu = uVol(s.volume);
-    var an = nVal(s.value);  var au = uVal(s.value);
     html += '<div class="sum-row" onclick="goSlide(' + (si + 1) + ')">'
       + '<div class="sr-name">' + s.name + '</div>'
       + '<div class="sr-chg ' + cc(s.change) + '">' + sign + s.change + '%</div>'
       + '<div class="sr-right">'
       + '<div class="sr-price">' + (s.lastPrice || 0).toLocaleString('fa-IR') + ' تومان</div>'
       + '<div class="sr-metrics">'
-      + '<div class="sr-m"><span class="lbl">حجم </span>' + vn + (vu ? ' ' + vu : '') + '</div>'
-      + '<div class="sr-m"><span class="lbl">ارزش </span>' + an + (au ? ' ' + au : '') + '</div>'
+      + '<div class="sr-m"><span class="lbl">ح</span>' + sVol(s.volume) + '</div>'
+      + '<div class="sr-m"><span class="lbl">ا</span>' + sVal(s.value) + '</div>'
       + '</div></div></div>';
   });
   html += '</div><div class="hint">روی نماد بزن برای جزئیات ◄</div>';
@@ -239,7 +259,9 @@ function buildDetail(s) {
   var sBadge = s.status === 'مجاز' ? 'ok' : 'stop';
   var pCls = cv(s.change);
   var fCls = (s.moneyFlow || 0) >= 0 ? 'c-up' : 'c-dn';
+  var fNum = nFlow(s.moneyFlow);
 
+  /* hero */
   var html = '<div class="stk-hero">'
     + '<div class="sh-name">' + s.name + '</div>'
     + '<div class="sh-badge ' + sBadge + '">' + s.status + '</div>'
@@ -250,25 +272,31 @@ function buildDetail(s) {
     + '<div class="sh-close">پایانی: <b>' + (s.closingPrice || 0).toLocaleString('fa-IR') + '</b> تومان</div>'
     + '</div>';
 
-  html += '<div class="sec-lbl">قیمت و ارزش بازار</div>'
-    + '<div class="g2">'
+  /* row 1: قیمت دیروز | ارزش بازار | میانگین حجم (3 columns) */
+  html += '<div class="sec-lbl">قیمت و بازار</div>'
+    + '<div class="g3">'
     + cell('قیمت دیروز', (s.prevPrice || 0).toLocaleString('fa-IR'), 'تومان', 'c-muted')
     + cell('ارزش بازار', nMC(s.marketCap), 'همت', 'c-gold')
+    + cell('میانگین ماهانه', nVol(s.avgVolume), uVol(s.avgVolume), 'c-muted')
     + '</div>';
 
-  html += '<div class="sec-lbl">حجم و ارزش معاملات</div>'
+  /* row 2: حجم | ارزش (2 columns) */
+  html += '<div class="sec-lbl">حجم و ارزش</div>'
     + '<div class="g2">'
     + cell('حجم معاملات', nVol(s.volume), uVol(s.volume), 'c-teal')
     + cell('ارزش معاملات', nVal(s.value), uVal(s.value), 'c-txt')
-    + '</div>'
-    + '<div class="cell" style="margin-bottom:6px"><div class="cl">میانگین حجم ماهانه</div><div class="cv c-muted">' + (nVol(s.avgVolume) !== '—' && uVol(s.avgVolume) ? nVol(s.avgVolume) + ' ' + uVol(s.avgVolume) : nVol(s.avgVolume)) + '</div></div>';
-
-  html += '<div class="sec-lbl">ورود پول حقیقی</div>'
-    + '<div class="cell" style="margin-bottom:6px">'
-    + '<div class="cl">جریان پول</div>'
-    + '<div class="cv ' + fCls + '">' + (nFlow(s.moneyFlow) !== '—' ? nFlow(s.moneyFlow) + ' میلیارد تومان' : '—') + '</div>'
     + '</div>';
 
+  /* row 3: ورود پول */
+  html += '<div class="sec-lbl">ورود پول حقیقی</div>'
+    + '<div class="cell" style="margin-bottom:5px">'
+    + '<div class="cl">جریان پول</div>'
+    + (fNum !== '—'
+      ? '<div class="cv-wrap"><span class="cv ' + fCls + '">' + fNum + '</span><span class="cu">میلیارد تومان</span></div>'
+      : '<div class="cv c-muted">—</div>')
+    + '</div>';
+
+  /* row 4: حقیقی/حقوقی */
   html += '<div class="sec-lbl">حقیقی / حقوقی</div>'
     + buildII(s);
 
