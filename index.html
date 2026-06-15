@@ -116,15 +116,15 @@ body{
 .ii-u{font-size:8px;color:var(--muted);}
 .ii-pct{font-size:9px;font-weight:700;color:var(--muted);margin-top:1px;}
 .ii-cnt{font-size:8px;color:var(--muted);}
-.ii-buy{background:#fff;}
-.ii-sell{background:#fff;}
+.ii-buy{background:rgba(22,163,74,.05);}
+.ii-sell{background:rgba(220,38,38,.05);}
 </style>
 </head>
 <body>
 <div class="hdr">
   <div class="hdr-top">
     <div class="hdr-index">
-      <div class="idx-num">۴,۹۷۲,۸۳۶</div>
+      <div class="idx-num">۴,۹۷۲,۹۲۶</div>
       <div class="idx-chg idx-up">(+۳.۲%)</div>
       <div class="idx-lbl">شاخص کل</div>
     </div>
@@ -134,7 +134,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۵</div>
-      <div class="hdr-upd">آپدیت ۱۱:۴۱</div>
+      <div class="hdr-upd">آپدیت ۱۱:۴۶</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -145,7 +145,7 @@ body{
 </div>
 
 <script>
-const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 903, "closingPrice": 903, "prevPrice": 877, "change": 2.96, "closingChange": 2.96, "volume": 25407087, "value": 229425995610, "retailBuy": 22729853, "retailSell": 1812328, "instBuy": 2660475, "instSell": 23578000, "moneyFlow": 188885250750, "avgVolume": 38007063, "marketCap": 423.94, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 497, "closingPrice": 497, "prevPrice": 482, "change": 2.99, "closingChange": 2.99, "volume": 16878287, "value": 83829680854, "retailBuy": 10949725, "retailSell": 4950655, "instBuy": 5928562, "instSell": 11927632, "moneyFlow": 29797380690, "avgVolume": 22721795, "marketCap": 74.5, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 703, "closingPrice": 703, "prevPrice": 683, "change": 2.93, "closingChange": 2.93, "volume": 8795328, "value": 61831155840, "retailBuy": 8795328, "retailSell": 606508, "instBuy": 0, "instSell": 8188820, "moneyFlow": 57567404600, "avgVolume": 9508363, "marketCap": 72.76, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 670, "closingPrice": 670, "prevPrice": 651, "change": 2.92, "closingChange": 2.92, "volume": 154606090, "value": 1035620599070, "retailBuy": 107323894, "retailSell": 7490436, "instBuy": 47282196, "instSell": 147115654, "moneyFlow": 668884168600, "avgVolume": 21486101, "marketCap": 194.3, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 254, "closingPrice": 254, "prevPrice": 247, "change": 3.0, "closingChange": 3.0, "volume": 3889555, "value": 9883359255, "retailBuy": 1738106, "retailSell": 568229, "instBuy": 2151449, "instSell": 3321326, "moneyFlow": 2972657457, "avgVolume": 3651821, "marketCap": 5.08, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
+const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 903, "closingPrice": 903, "prevPrice": 877, "change": 2.96, "closingChange": 2.96, "volume": 25417687, "value": 229521713610, "retailBuy": 22746612, "retailSell": 1829087, "instBuy": 2660475, "instSell": 23578000, "moneyFlow": 188885250750, "avgVolume": 38007063, "marketCap": 423.94, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 497, "closingPrice": 497, "prevPrice": 482, "change": 2.99, "closingChange": 2.99, "volume": 16895265, "value": 83914010580, "retailBuy": 10949725, "retailSell": 4966633, "instBuy": 5944540, "instSell": 11927632, "moneyFlow": 29718017964, "avgVolume": 22721795, "marketCap": 74.5, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 703, "closingPrice": 703, "prevPrice": 683, "change": 2.93, "closingChange": 2.93, "volume": 8896997, "value": 62545888910, "retailBuy": 8896997, "retailSell": 708177, "instBuy": 0, "instSell": 8188820, "moneyFlow": 57567404600, "avgVolume": 9508363, "marketCap": 72.76, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 670, "closingPrice": 670, "prevPrice": 651, "change": 2.92, "closingChange": 2.92, "volume": 171006395, "value": 1145502642570, "retailBuy": 116986234, "retailSell": 7490741, "instBuy": 51820161, "instSell": 161315654, "moneyFlow": 733619803100, "avgVolume": 21486101, "marketCap": 194.3, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 254, "closingPrice": 254, "prevPrice": 247, "change": 3.0, "closingChange": 3.0, "volume": 3889555, "value": 9883359255, "retailBuy": 1738106, "retailSell": 568229, "instBuy": 2151449, "instSell": 3321326, "moneyFlow": 2972657457, "avgVolume": 3651821, "marketCap": 5.08, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
 let curSi = 0;
 
 /* ── number-only format (no units) ── */
