@@ -84,23 +84,25 @@ body{
 .sh-plbl{font-size:8px;color:var(--muted);font-weight:700;}
 .sh-pval{font-size:19px;font-weight:800;}
 .sh-pchg{font-size:11px;font-weight:800;padding:2px 7px;border-radius:14px;direction:ltr;}
-.sec-lbl{font-size:8px;font-weight:700;color:var(--gold);border-right:2px solid var(--gold);padding-right:5px;margin:4px 0 3px;}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:5px;}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:5px;}
-.cell{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:6px 9px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-.cl{font-size:8px;color:var(--muted);margin-bottom:2px;font-weight:600;}
-.cv{font-size:15px;font-weight:800;}
+.sec-lbl{font-size:10px;font-weight:700;color:var(--gold);border-right:2px solid var(--gold);padding-right:5px;margin:3px 0 4px;flex-shrink:0;}
+.slide-det{display:flex;flex-direction:column;}
+.det-sec{flex:1;display:flex;flex-direction:column;min-height:0;}
+.g2{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:0;min-height:0;}
+.g3{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:0;min-height:0;}
+.cell{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;flex-direction:column;justify-content:center;}
+.cl{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:600;}
+.cv{font-size:20px;font-weight:800;}
 .cv-wrap{display:flex;direction:rtl;align-items:baseline;gap:3px;justify-content:center;}
-.cu{font-size:9px;color:var(--muted);}
+.cu{font-size:11px;color:var(--muted);}
 .c-up{color:var(--up);} .c-dn{color:var(--dn);}
 .c-teal{color:var(--teal);} .c-gold{color:var(--gold);}
 .c-txt{color:var(--txt);} .c-muted{color:var(--muted);}
 /* حقیقی/حقوقی table */
-.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:5px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-.ii-hdr{display:grid;grid-template-columns:36px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);}
+.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04);flex:1;display:flex;flex-direction:column;}
+.ii-hdr{display:grid;grid-template-columns:36px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);flex-shrink:0;}
 .ii-hdr-lbl{padding:4px;}
-.ii-hdr-col{padding:4px 6px;text-align:center;font-size:10px;font-weight:700;color:var(--muted);border-right:1px solid var(--border);}
-.ii-row{display:grid;grid-template-columns:36px 1fr 1fr;border-bottom:1px solid var(--border);}
+.ii-hdr-col{padding:6px 8px;text-align:center;font-size:12px;font-weight:700;color:var(--muted);border-right:1px solid var(--border);}
+.ii-row{flex:1;display:grid;grid-template-columns:36px 1fr 1fr;border-bottom:1px solid var(--border);}
 .ii-row:last-child{border-bottom:none;}
 .ii-row-lbl{
   display:flex;align-items:center;justify-content:center;
@@ -109,11 +111,11 @@ body{
 }
 .ii-buy-lbl{background:#fff;}
 .ii-sell-lbl{background:#fff;}
-.ii-cell{padding:5px 6px;text-align:center;border-right:1px solid var(--border);}
+.ii-cell{padding:8px 8px;text-align:center;border-right:1px solid var(--border);}
 .ii-cell:last-child{border-right:none;}
 .ii-vw{display:flex;direction:rtl;justify-content:center;align-items:baseline;gap:2px;}
-.ii-vol{font-size:12px;font-weight:800;}
-.ii-u{font-size:8px;color:var(--muted);}
+.ii-vol{font-size:16px;font-weight:800;}
+.ii-u{font-size:10px;color:var(--muted);}
 .ii-pct{font-size:9px;font-weight:700;color:var(--muted);margin-top:1px;}
 .ii-cnt{font-size:8px;color:var(--muted);}
 .ii-buy{background:#fff;}
@@ -124,8 +126,8 @@ body{
 <div class="hdr">
   <div class="hdr-top">
     <div class="hdr-index">
-      <div class="idx-num">۵,۰۷۲,۳۰۷</div>
-      <div class="idx-chg idx-up">(+۱.۸۴%)</div>
+      <div class="idx-num">۵,۰۷۰,۹۵۹</div>
+      <div class="idx-chg idx-up">(+۱.۸۲%)</div>
       <div class="idx-lbl">شاخص کل</div>
     </div>
     <div class="hdr-center">
@@ -134,7 +136,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۶</div>
-      <div class="hdr-upd">آپدیت ۱۰:۲۶</div>
+      <div class="hdr-upd">آپدیت ۱۰:۲۸</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -145,7 +147,7 @@ body{
 </div>
 
 <script>
-const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 930, "closingPrice": 930, "prevPrice": 903, "change": 2.99, "closingChange": 2.99, "volume": 30695585, "value": 285468940500, "retailBuy": 25650500, "retailSell": 6317585, "instBuy": 3645085, "instSell": 22978000, "moneyFlow": 179796109500, "avgVolume": 37481817, "marketCap": 436.62, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 487, "closingPrice": 509, "prevPrice": 497, "change": -1.93, "closingChange": 2.5, "volume": 32202311, "value": 163932675674, "retailBuy": 21181715, "retailSell": 21896013, "instBuy": 10968193, "instSell": 10253895, "moneyFlow": -3636491118, "avgVolume": 22457562, "marketCap": 76.36, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 686, "closingPrice": 708, "prevPrice": 703, "change": -2.42, "closingChange": 0.71, "volume": 22290359, "value": 157832174920, "retailBuy": 21613194, "retailSell": 17731539, "instBuy": 671165, "instSell": 4552820, "moneyFlow": 27482117400, "avgVolume": 9504806, "marketCap": 73.28, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 650, "closingPrice": 669, "prevPrice": 670, "change": -2.99, "closingChange": -0.15, "volume": 86557623, "value": 579097450930, "retailBuy": 74233503, "retailSell": 68988858, "instBuy": 11964009, "instSell": 17208654, "moneyFlow": 35086675050, "avgVolume": 29939675, "marketCap": 194.01, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 247, "closingPrice": 259, "prevPrice": 254, "change": -2.95, "closingChange": 1.85, "volume": 4720519, "value": 12215581699, "retailBuy": 1403594, "retailSell": 1470519, "instBuy": 3316925, "instSell": 3250000, "moneyFlow": -173201900, "avgVolume": 3683082, "marketCap": 5.18, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
+const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 930, "closingPrice": 930, "prevPrice": 903, "change": 2.99, "closingChange": 2.99, "volume": 30760905, "value": 286076416500, "retailBuy": 26350825, "retailSell": 7372825, "instBuy": 4400000, "instSell": 23378000, "moneyFlow": 176495400000, "avgVolume": 37481817, "marketCap": 436.62, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 499, "closingPrice": 509, "prevPrice": 497, "change": 0.46, "closingChange": 2.4, "volume": 33287179, "value": 169294107249, "retailBuy": 21234118, "retailSell": 21948416, "instBuy": 10968193, "instSell": 10253895, "moneyFlow": -3632919628, "avgVolume": 22457562, "marketCap": 76.29, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 685, "closingPrice": 708, "prevPrice": 703, "change": -2.56, "closingChange": 0.71, "volume": 22356779, "value": 158287331920, "retailBuy": 21656509, "retailSell": 17774854, "instBuy": 671165, "instSell": 4552820, "moneyFlow": 27482117400, "avgVolume": 9504806, "marketCap": 73.28, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 650, "closingPrice": 669, "prevPrice": 670, "change": -2.99, "closingChange": -0.15, "volume": 87406223, "value": 584613350930, "retailBuy": 74998614, "retailSell": 69753969, "instBuy": 11964009, "instSell": 17208654, "moneyFlow": 35086675050, "avgVolume": 29939675, "marketCap": 194.01, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 247, "closingPrice": 259, "prevPrice": 254, "change": -2.79, "closingChange": 1.81, "volume": 4767213, "value": 12330915879, "retailBuy": 1403594, "retailSell": 1470519, "instBuy": 3316925, "instSell": 3250000, "moneyFlow": -173134975, "avgVolume": 3683082, "marketCap": 5.17, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
 let curSi = 0;
 
 /* ── number-only format (no units) ── */
@@ -274,31 +276,36 @@ function buildDetail(s) {
     + '</div>';
 
   /* row 1: قیمت دیروز | ارزش بازار | میانگین حجم (3 columns) */
-  html += '<div class="sec-lbl">قیمت و بازار</div>'
+  html += '<div class="det-sec">'
+    + '<div class="sec-lbl">قیمت و بازار</div>'
     + '<div class="g3">'
     + cell('قیمت دیروز', (s.prevPrice || 0).toLocaleString('fa-IR'), 'تومان', 'c-muted')
     + cell('ارزش بازار', nMC(s.marketCap), 'همت', 'c-gold')
     + cell('میانگین حجم ماه', nVol(s.avgVolume), uVol(s.avgVolume), 'c-muted')
-    + '</div>';
+    + '</div></div>';
 
   /* row 2: حجم | ارزش (2 columns) */
-  html += '<div class="sec-lbl">حجم و ارزش</div>'
+  html += '<div class="det-sec">'
+    + '<div class="sec-lbl">حجم و ارزش</div>'
     + '<div class="g2">'
     + cell('حجم معاملات', nVol(s.volume), uVol(s.volume), 'c-teal')
     + cell('ارزش معاملات', nVal(s.value), uVal(s.value), 'c-txt')
-    + '</div>';
+    + '</div></div>';
 
   /* row 3: ورود پول */
-  html += '<div class="sec-lbl">ورود پول حقیقی</div>'
-    + '<div class="cell" style="margin-bottom:5px">'
+  html += '<div class="det-sec">'
+    + '<div class="sec-lbl">ورود پول حقیقی</div>'
+    + '<div class="cell">'
     + (fNum !== '—'
       ? '<div class="cv ' + fCls + '">' + fNum + '<span class="cu"> میلیارد تومان</span></div>'
       : '<div class="cv c-muted">—</div>')
-    + '</div>';
+    + '</div></div>';
 
   /* row 4: حقیقی/حقوقی */
-  html += '<div class="sec-lbl">حقیقی / حقوقی</div>'
-    + buildII(s);
+  html += '<div class="det-sec">'
+    + '<div class="sec-lbl">حقیقی / حقوقی</div>'
+    + buildII(s)
+    + '</div>';
 
   return html;
 }
@@ -318,7 +325,7 @@ function init() {
   }).join('');
 
   var slides = ['<div class="slide slide-sum">' + buildSummary() + '</div>'];
-  stocks.forEach(function(s) { slides.push('<div class="slide">' + buildDetail(s) + '</div>'); });
+  stocks.forEach(function(s) { slides.push('<div class="slide slide-det">' + buildDetail(s) + '</div>'); });
   document.getElementById('slider').innerHTML = slides.join('');
 }
 
