@@ -84,12 +84,10 @@ body{
 .sh-plbl{font-size:8px;color:var(--muted);font-weight:700;}
 .sh-pval{font-size:19px;font-weight:800;}
 .sh-pchg{font-size:11px;font-weight:800;padding:2px 7px;border-radius:14px;direction:ltr;}
-.sec-lbl{font-size:10px;font-weight:700;color:var(--gold);border-right:2px solid var(--gold);padding-right:5px;margin:3px 0 4px;flex-shrink:0;}
-.slide-det{display:flex;flex-direction:column;}
-.det-sec{flex:1;display:flex;flex-direction:column;min-height:0;}
-.g2{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:0;min-height:0;}
-.g3{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:0;min-height:0;}
-.cell{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;flex-direction:column;justify-content:center;}
+.sec-lbl{font-size:8px;font-weight:700;color:var(--gold);border-right:2px solid var(--gold);padding-right:5px;margin:4px 0 3px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:7px;}
+.cell{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 .cl{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:600;}
 .cv{font-size:20px;font-weight:800;}
 .cv-wrap{display:flex;direction:rtl;align-items:baseline;gap:3px;justify-content:center;}
@@ -98,11 +96,11 @@ body{
 .c-teal{color:var(--teal);} .c-gold{color:var(--gold);}
 .c-txt{color:var(--txt);} .c-muted{color:var(--muted);}
 /* حقیقی/حقوقی table */
-.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04);flex:1;display:flex;flex-direction:column;}
-.ii-hdr{display:grid;grid-template-columns:36px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);flex-shrink:0;}
+.ii-wrap{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:5px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.ii-hdr{display:grid;grid-template-columns:36px 1fr 1fr;background:#f9fafb;border-bottom:1px solid var(--border);}
 .ii-hdr-lbl{padding:4px;}
 .ii-hdr-col{padding:6px 8px;text-align:center;font-size:12px;font-weight:700;color:var(--muted);border-right:1px solid var(--border);}
-.ii-row{flex:1;display:grid;grid-template-columns:36px 1fr 1fr;border-bottom:1px solid var(--border);}
+.ii-row{display:grid;grid-template-columns:36px 1fr 1fr;border-bottom:1px solid var(--border);}
 .ii-row:last-child{border-bottom:none;}
 .ii-row-lbl{
   display:flex;align-items:center;justify-content:center;
@@ -126,8 +124,8 @@ body{
 <div class="hdr">
   <div class="hdr-top">
     <div class="hdr-index">
-      <div class="idx-num">۵,۰۷۷,۱۶۷</div>
-      <div class="idx-chg idx-up">(+۱.۹۴%)</div>
+      <div class="idx-num">۵,۰۷۵,۵۶۸</div>
+      <div class="idx-chg idx-up">(+۱.۹۱%)</div>
       <div class="idx-lbl">شاخص کل</div>
     </div>
     <div class="hdr-center">
@@ -136,7 +134,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۶</div>
-      <div class="hdr-upd">آپدیت ۱۰:۰۶</div>
+      <div class="hdr-upd">آپدیت ۱۰:۰۹</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -147,7 +145,7 @@ body{
 </div>
 
 <script>
-const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 930, "closingPrice": 930, "prevPrice": 903, "change": 2.99, "closingChange": 2.99, "volume": 26376378, "value": 245300315400, "retailBuy": 23976378, "retailSell": 3398378, "instBuy": 2400000, "instSell": 22978000, "moneyFlow": 191375400000, "avgVolume": 37481817, "marketCap": 436.62, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 497, "closingPrice": 510, "prevPrice": 497, "change": 0.06, "closingChange": 2.74, "volume": 30155867, "value": 153875653965, "retailBuy": 20176644, "retailSell": 19751972, "instBuy": 9829223, "instSell": 10253895, "moneyFlow": 2167101216, "avgVolume": 22457562, "marketCap": 76.55, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 682, "closingPrice": 712, "prevPrice": 703, "change": -2.99, "closingChange": 1.28, "volume": 18943106, "value": 134938534800, "retailBuy": 18036659, "retailSell": 13955004, "instBuy": 471165, "instSell": 4552820, "moneyFlow": 29061383600, "avgVolume": 9504806, "marketCap": 73.69, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 0, "closingPrice": 0, "prevPrice": 0, "change": 0.0, "closingChange": 0, "volume": 0, "value": 0, "retailBuy": 63364026, "retailSell": 58119381, "instBuy": 11964009, "instSell": 17208654, "moneyFlow": 0, "avgVolume": 29939675, "marketCap": 0.0, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 254, "closingPrice": 260, "prevPrice": 254, "change": -0.04, "closingChange": 2.32, "volume": 4247958, "value": 11043139937, "retailBuy": 931033, "retailSell": 1082863, "instBuy": 3316925, "instSell": 3165095, "moneyFlow": -394758000, "avgVolume": 3683082, "marketCap": 5.2, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
+const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 930, "closingPrice": 930, "prevPrice": 903, "change": 2.99, "closingChange": 2.99, "volume": 26545520, "value": 246873336000, "retailBuy": 24135520, "retailSell": 3557520, "instBuy": 2400000, "instSell": 22978000, "moneyFlow": 191375400000, "avgVolume": 37481817, "marketCap": 436.62, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 497, "closingPrice": 510, "prevPrice": 497, "change": 0.0, "closingChange": 2.66, "volume": 31053725, "value": 158336197649, "retailBuy": 20624502, "retailSell": 20799830, "instBuy": 10429223, "instSell": 10253895, "moneyFlow": -893997472, "avgVolume": 22457562, "marketCap": 76.48, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 682, "closingPrice": 712, "prevPrice": 703, "change": -2.99, "closingChange": 1.28, "volume": 19261202, "value": 137107949520, "retailBuy": 18517767, "retailSell": 14636112, "instBuy": 671165, "instSell": 4552820, "moneyFlow": 27637383600, "avgVolume": 9504806, "marketCap": 73.69, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 650, "closingPrice": 672, "prevPrice": 670, "change": -2.99, "closingChange": 0.3, "volume": 75412406, "value": 506653540430, "retailBuy": 63448397, "retailSell": 58203752, "instBuy": 11964009, "instSell": 17208654, "moneyFlow": 35244014400, "avgVolume": 29939675, "marketCap": 194.88, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 254, "closingPrice": 260, "prevPrice": 254, "change": -0.04, "closingChange": 2.32, "volume": 4247958, "value": 11043139937, "retailBuy": 931033, "retailSell": 1082863, "instBuy": 3316925, "instSell": 3165095, "moneyFlow": -394758000, "avgVolume": 3683082, "marketCap": 5.2, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
 let curSi = 0;
 
 /* ── number-only format (no units) ── */
@@ -276,36 +274,31 @@ function buildDetail(s) {
     + '</div>';
 
   /* row 1: قیمت دیروز | ارزش بازار | میانگین حجم (3 columns) */
-  html += '<div class="det-sec">'
-    + '<div class="sec-lbl">قیمت و بازار</div>'
+  html += '<div class="sec-lbl">قیمت و بازار</div>'
     + '<div class="g3">'
     + cell('قیمت دیروز', (s.prevPrice || 0).toLocaleString('fa-IR'), 'تومان', 'c-muted')
     + cell('ارزش بازار', nMC(s.marketCap), 'همت', 'c-gold')
     + cell('میانگین حجم ماه', nVol(s.avgVolume), uVol(s.avgVolume), 'c-muted')
-    + '</div></div>';
+    + '</div>';
 
   /* row 2: حجم | ارزش (2 columns) */
-  html += '<div class="det-sec">'
-    + '<div class="sec-lbl">حجم و ارزش</div>'
+  html += '<div class="sec-lbl">حجم و ارزش</div>'
     + '<div class="g2">'
     + cell('حجم معاملات', nVol(s.volume), uVol(s.volume), 'c-teal')
     + cell('ارزش معاملات', nVal(s.value), uVal(s.value), 'c-txt')
-    + '</div></div>';
+    + '</div>';
 
   /* row 3: ورود پول */
-  html += '<div class="det-sec">'
-    + '<div class="sec-lbl">ورود پول حقیقی</div>'
-    + '<div class="cell">'
+  html += '<div class="sec-lbl">ورود پول حقیقی</div>'
+    + '<div class="cell" style="margin-bottom:5px">'
     + (fNum !== '—'
       ? '<div class="cv ' + fCls + '">' + fNum + '<span class="cu"> میلیارد تومان</span></div>'
       : '<div class="cv c-muted">—</div>')
-    + '</div></div>';
+    + '</div>';
 
   /* row 4: حقیقی/حقوقی */
-  html += '<div class="det-sec">'
-    + '<div class="sec-lbl">حقیقی / حقوقی</div>'
-    + buildII(s)
-    + '</div>';
+  html += '<div class="sec-lbl">حقیقی / حقوقی</div>'
+    + buildII(s);
 
   return html;
 }
@@ -325,7 +318,7 @@ function init() {
   }).join('');
 
   var slides = ['<div class="slide slide-sum">' + buildSummary() + '</div>'];
-  stocks.forEach(function(s) { slides.push('<div class="slide slide-det">' + buildDetail(s) + '</div>'); });
+  stocks.forEach(function(s) { slides.push('<div class="slide">' + buildDetail(s) + '</div>'); });
   document.getElementById('slider').innerHTML = slides.join('');
 }
 
