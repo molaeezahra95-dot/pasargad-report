@@ -127,7 +127,7 @@ body{
 <div class="hdr">
   <div class="hdr-top">
     <div class="hdr-index">
-      <div class="idx-num">۵,۱۵۱,۰۸۸</div>
+      <div class="idx-num">۵,۱۵۱,۰۹۵</div>
       <div class="idx-chg idx-up">(+۱.۰%)</div>
       <div class="idx-lbl">شاخص کل</div>
     </div>
@@ -137,7 +137,7 @@ body{
     </div>
     <div class="hdr-right">
       <div class="hdr-date">۱۴۰۵/۰۳/۲۷</div>
-      <div class="hdr-upd">آپدیت ۱۵:۰۱</div>
+      <div class="hdr-upd">آپدیت ۱۶:۲۳</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -155,7 +155,7 @@ let curSi = 0;
 function nVol(n) {
   if (!n) return '—';
   var m = n / 1e6;
-  if (m >= 1) return (m >= 10 ? Math.round(m) : parseFloat(m.toFixed(1))).toLocaleString('fa-IR');
+  if (m >= 1) return parseFloat(m.toFixed(1)).toLocaleString('fa-IR');
   return n.toLocaleString('fa-IR');
 }
 function uVol(n) {
