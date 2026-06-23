@@ -65,6 +65,8 @@ body{
 .zt{background:#f9fafb;color:var(--muted);border:1px solid var(--border);}
 .sr-right{flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
 .sr-price{font-size:20px;font-weight:800;color:var(--txt);}
+.sr-stale{color:var(--muted) !important;font-size:17px !important;}
+.stale-tag{font-size:9px;color:#92400e;background:#fef3c7;border:1px solid #fcd34d;border-radius:5px;padding:1px 6px;margin-top:2px;display:inline-block;}
 .sr-metrics{display:flex;flex-direction:column;gap:3px;align-items:flex-end;}
 .sr-m{font-size:11px;background:#f9fafb;border:1px solid var(--border);border-radius:7px;padding:3px 9px;color:var(--txt);white-space:nowrap;font-weight:600;}
 .hint{font-size:10px;color:var(--muted);text-align:center;margin-top:8px;padding:4px;}
@@ -127,8 +129,8 @@ body{
 <div class="hdr">
   <div class="hdr-top">
     <div class="hdr-index">
-      <div class="idx-num">۵,۰۷۲,۵۷۷</div>
-      <div class="idx-chg idx-dn">(-۱.۰۴%)</div>
+      <div class="idx-num">۵,۱۷۰,۹۴۹</div>
+      <div class="idx-chg idx-up">(+۱.۹۴%)</div>
       <div class="idx-lbl">شاخص کل</div>
     </div>
     <div class="hdr-center">
@@ -136,8 +138,8 @@ body{
       <div class="hdr-title">گروه مالی پاسارگاد</div>
     </div>
     <div class="hdr-right">
-      <div class="hdr-date">۱۴۰۵/۰۴/۰۱</div>
-      <div class="hdr-upd">آپدیت ۱۴:۰۶</div>
+      <div class="hdr-date">۱۴۰۵/۰۴/۰۲</div>
+      <div class="hdr-upd">آپدیت ۱۰:۲۷</div>
     </div>
   </div>
   <div class="page-tabs" id="pageTabs"></div>
@@ -148,7 +150,7 @@ body{
 </div>
 
 <script>
-const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 1033, "closingPrice": 1032, "prevPrice": 1003, "change": 2.99, "closingChange": 2.89, "volume": 103475328, "value": 1068143848920, "retailBuy": 88561909, "retailSell": 64741102, "instBuy": 14913419, "instSell": 38734226, "moneyFlow": 245830728240, "avgVolume": 65064881, "marketCap": 484.51, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 506, "closingPrice": 504, "prevPrice": 519, "change": -2.5, "closingChange": -2.89, "volume": 18508645, "value": 93322957440, "retailBuy": 6356013, "retailSell": 16141208, "instBuy": 12152632, "instSell": 2367437, "moneyFlow": -49317382800, "avgVolume": 21317942, "marketCap": 75.6, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 774, "closingPrice": 763, "prevPrice": 752, "change": 2.93, "closingChange": 1.46, "volume": 48717756, "value": 371932154290, "retailBuy": 18616177, "retailSell": 8917756, "instBuy": 30101579, "instSell": 39800000, "moneyFlow": 73998952230, "avgVolume": 10633887, "marketCap": 78.97, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 713, "closingPrice": 706, "prevPrice": 693, "change": 2.89, "closingChange": 1.88, "volume": 55856653, "value": 394581646610, "retailBuy": 29502629, "retailSell": 15303960, "instBuy": 26354024, "instSell": 40552693, "moneyFlow": 100242603140, "avgVolume": 52935578, "marketCap": 204.74, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 231, "closingPrice": 232, "prevPrice": 238, "change": -2.99, "closingChange": -2.27, "volume": 4960306, "value": 11520928592, "retailBuy": 255226, "retailSell": 354605, "instBuy": 4705080, "instSell": 4605701, "moneyFlow": -230857417, "avgVolume": 7096740, "marketCap": 4.65, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
+const stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 1062, "closingPrice": 1062, "prevPrice": 1032, "change": 2.91, "closingChange": 2.91, "volume": 67425201, "value": 716055634620, "retailBuy": 67225201, "retailSell": 4447201, "instBuy": 200000, "instSell": 62978000, "moneyFlow": 666702360000, "avgVolume": 66810810, "marketCap": 498.59, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0, "stale": false}, {"name": "آریان", "status": "مجاز", "lastPrice": 511, "closingPrice": 517, "prevPrice": 504, "change": 1.39, "closingChange": 2.58, "volume": 2661982, "value": 13774932310, "retailBuy": 2627206, "retailSell": 2211676, "instBuy": 30000, "instSell": 445530, "moneyFlow": 2148290100, "avgVolume": 21190247, "marketCap": 77.55, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0, "stale": false}, {"name": "بپاس", "status": "مجاز", "lastPrice": 784, "closingPrice": 785, "prevPrice": 763, "change": 2.75, "closingChange": 2.88, "volume": 13440508, "value": 105465610930, "retailBuy": 4950696, "retailSell": 4839508, "instBuy": 8488812, "instSell": 8600000, "moneyFlow": 872825800, "avgVolume": 12364972, "marketCap": 81.25, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0, "stale": false}, {"name": "میدکو", "status": "مجاز", "lastPrice": 727, "closingPrice": 727, "prevPrice": 706, "change": 2.97, "closingChange": 2.97, "volume": 23222994, "value": 168754441300, "retailBuy": 20122809, "retailSell": 16437597, "instBuy": 3069072, "instSell": 6754284, "moneyFlow": 26791491240, "avgVolume": 53068354, "marketCap": 210.83, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0, "stale": false}, {"name": "اتکای", "status": "مجاز", "lastPrice": 232, "closingPrice": 230, "prevPrice": 232, "change": 0.0, "closingChange": -1.16, "volume": 962918, "value": 2211275601, "retailBuy": 233141, "retailSell": 762918, "instBuy": 729777, "instSell": 200000, "moneyFlow": -1216367992, "avgVolume": 6999629, "marketCap": 4.59, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0, "stale": false}];
 let curSi = 0;
 
 /* ── number-only format (no units) ── */
@@ -204,7 +206,8 @@ function buildSummary() {
       + '<div class="sr-name">' + s.name + '</div>'
       + '<div class="sr-chg ' + cc(s.change) + '">' + sign + s.change + '%</div>'
       + '<div class="sr-right">'
-      + '<div class="sr-price">' + (s.lastPrice || 0).toLocaleString('fa-IR') + ' تومان</div>'
+      + '<div class="sr-price' + (s.stale ? ' sr-stale' : '') + '">' + (s.lastPrice || 0).toLocaleString('fa-IR') + ' تومان</div>'
+      + (s.stale ? '<div class="stale-tag">آخرین قیمت معتبر</div>' : '')
       + '<div class="sr-metrics">'
       + '<div class="sr-m">حجم معاملات ' + nVol(s.volume) + ' ' + uVol(s.volume) + '</div>'
       + '<div class="sr-m">ارزش معاملات ' + nVal(s.value) + ' ' + uVal(s.value) + '</div>'
